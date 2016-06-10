@@ -15,7 +15,8 @@
 		C472EC231D0B601C00AD925D /* RobotUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C472EC1E1D0B601C00AD925D /* RobotUIKit.framework */; };
 		C472EC241D0B601C00AD925D /* RobotKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C472EC1F1D0B601C00AD925D /* RobotKit.framework */; };
 		C472EC261D0B601C00AD925D /* OvalCompiler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C472EC211D0B601C00AD925D /* OvalCompiler.framework */; };
-		C472EC271D0B601C00AD925D /* MotionKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C472EC221D0B601C00AD925D /* MotionKit.framework */; };
+		C472EC2A1D0B620800AD925D /* bh.m in Sources */ = {isa = PBXBuildFile; fileRef = C472EC291D0B620800AD925D /* bh.m */; };
+		C4DEAC7C1D0B70BC003954AC /* MotionKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DEAC7B1D0B70BC003954AC /* MotionKit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +30,9 @@
 		C472EC1E1D0B601C00AD925D /* RobotUIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RobotUIKit.framework; sourceTree = "<group>"; };
 		C472EC1F1D0B601C00AD925D /* RobotKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RobotKit.framework; sourceTree = "<group>"; };
 		C472EC211D0B601C00AD925D /* OvalCompiler.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OvalCompiler.framework; sourceTree = "<group>"; };
-		C472EC221D0B601C00AD925D /* MotionKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MotionKit.framework; sourceTree = "<group>"; };
+		C472EC281D0B620800AD925D /* devSpheroBB8-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "devSpheroBB8-Bridging-Header.h"; sourceTree = "<group>"; };
+		C472EC291D0B620800AD925D /* bh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = bh.m; sourceTree = "<group>"; };
+		C4DEAC7B1D0B70BC003954AC /* MotionKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionKit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,7 +41,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C472EC241D0B601C00AD925D /* RobotKit.framework in Frameworks */,
-				C472EC271D0B601C00AD925D /* MotionKit.framework in Frameworks */,
 				C472EC261D0B601C00AD925D /* OvalCompiler.framework in Frameworks */,
 				C472EC231D0B601C00AD925D /* RobotUIKit.framework in Frameworks */,
 			);
@@ -72,10 +74,12 @@
 				C472EC131D0B5FE900AD925D /* Assets.xcassets */,
 				C472EC151D0B5FE900AD925D /* LaunchScreen.storyboard */,
 				C472EC181D0B5FE900AD925D /* Info.plist */,
+				C4DEAC7B1D0B70BC003954AC /* MotionKit.swift */,
+				C472EC281D0B620800AD925D /* devSpheroBB8-Bridging-Header.h */,
 				C472EC1E1D0B601C00AD925D /* RobotUIKit.framework */,
 				C472EC1F1D0B601C00AD925D /* RobotKit.framework */,
 				C472EC211D0B601C00AD925D /* OvalCompiler.framework */,
-				C472EC221D0B601C00AD925D /* MotionKit.framework */,
+				C472EC291D0B620800AD925D /* bh.m */,
 			);
 			path = devSpheroBB8;
 			sourceTree = "<group>";
@@ -112,6 +116,11 @@
 				TargetAttributes = {
 					C472EC081D0B5FE900AD925D = {
 						CreatedOnToolsVersion = 7.3;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -151,6 +160,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4DEAC7C1D0B70BC003954AC /* MotionKit.swift in Sources */,
+				C472EC2A1D0B620800AD925D /* bh.m in Sources */,
 				C472EC0F1D0B5FE900AD925D /* ViewController.swift in Sources */,
 				C472EC0D1D0B5FE900AD925D /* AppDelegate.swift in Sources */,
 			);
@@ -267,14 +278,24 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/devSpheroBB8",
 				);
 				INFOPLIST_FILE = devSpheroBB8/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = la.devAcademy.devSpheroBB8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "devSpheroBB8/devSpheroBB8-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -282,14 +303,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/devSpheroBB8",
 				);
 				INFOPLIST_FILE = devSpheroBB8/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = la.devAcademy.devSpheroBB8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "devSpheroBB8/devSpheroBB8-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -312,6 +342,7 @@
 				C472EC1D1D0B5FE900AD925D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
