@@ -69,5 +69,12 @@ class ViewController: UIViewController {
         robot.sleep()
     }
     
+    
+    @IBAction func runButton(sender: AnyObject) {
+        robot.sendCommand(RKRollCommand(heading: 0, velocity: 1.0))
+
+    }
+    
+    
 }
 

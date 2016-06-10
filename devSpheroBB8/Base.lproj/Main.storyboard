@@ -48,6 +48,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2aD-P6-nXW">
+                                <rect key="frame" x="273" y="431" width="55" height="30"/>
+                                <state key="normal" title="Avanzar"/>
+                                <connections>
+                                    <action selector="runButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dBG-MV-Cdz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -56,6 +63,8 @@
                             <constraint firstItem="tov-Pt-F8m" firstAttribute="top" secondItem="h1v-Lj-5Fl" secondAttribute="bottom" constant="20" id="DIy-ga-Qol"/>
                             <constraint firstItem="cea-Jb-w9c" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="45" id="TFy-q8-6C9"/>
                             <constraint firstItem="HTw-qw-DsS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WjH-Cg-lWE"/>
+                            <constraint firstItem="2aD-P6-nXW" firstAttribute="top" secondItem="HTw-qw-DsS" secondAttribute="bottom" constant="116" id="eAH-YD-vDS"/>
+                            <constraint firstItem="2aD-P6-nXW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fxw-fS-Vb8"/>
                             <constraint firstItem="h1v-Lj-5Fl" firstAttribute="top" secondItem="cea-Jb-w9c" secondAttribute="bottom" constant="20" id="iim-2e-9yW"/>
                             <constraint firstItem="HTw-qw-DsS" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tcC-Vi-UzK"/>
                             <constraint firstItem="h1v-Lj-5Fl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="u6Q-6q-Q8h"/>
